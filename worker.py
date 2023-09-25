@@ -199,7 +199,7 @@ def main(policy_path, rollouts_path, iterations):
     for o in env.scene.objects:
         initial_poses[o.name] = o.get_position_orientation()
     obj = env.scene.object_registry("name", "cologne")
-    recorder = Recorder()
+    recorder = Recorder(rollouts_path)
     group_name = datetime.now().strftime('rl_results')
 
     for i in range(iterations):
